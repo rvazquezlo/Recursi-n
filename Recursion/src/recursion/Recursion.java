@@ -42,6 +42,22 @@ public class Recursion {
         return Integer.toString(arreglo[indice]) + " " + imprimeComponentesDerecha(arreglo, total, indice - 1);
     }
     
+    public static void torresHanoi(int n, String origen, String destino, String auxiliar){
+        try{
+            if(n == 1)
+                System.out.println("Mueve 1 disco de " + origen + " a " + destino);
+            else
+            {
+                torresHanoi(n - 1, origen, auxiliar, destino);
+                System.out.println("Mueve 1 disco de " + origen + " a " + destino);
+                torresHanoi(n - 1, auxiliar, destino, origen);
+            }
+        }catch(NullPointerException e){
+            
+        }
+       
+    }
+    
     
     /**
      * @param args the command line arguments
